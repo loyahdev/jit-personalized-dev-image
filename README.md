@@ -1,7 +1,41 @@
 # INCOMPLETE PDDI DO NOT WORK FOR ENABLING JIT ON IOS 17
 ## JIT-Personalized-Dev-Image
-
+### Please note this is solely based on JIT enabling and not developer disk images and there uses. I do not have a deep understanding and some things said may be false
 ### I aim to create the ability to run JIT (Just In Time) Compilation on iOS devices running iOS 17 or use other sources and collect the info here
+
+## Changes in iOS 17
+With the beta release of iOS 17, Apple changed the standard Developer Disk Images for iOS releases to now Personal ones that are a per device basis. These personalized images aren't built the same with the file structure differences being:
+```
+- Xcode_iOS_DDI_Personalized (The Personalized Developer Disk Image)
+    - Restore
+     - 000-00000-000.dmg
+     - BuildManifest.plist
+     - Firmware
+       - 000-00000-000.dmg.trustcache
+     - Restore.plist
+   - version.plist
+```
+I'm too lazy to list all of the files as there is a lot but the ones below are the base for the DMG file
+```
+- DeveloperDiskImage (An iOS 16.4 Developer Disk Image)
+    - Applications
+    - Library
+    - System
+    - usr
+```
+
+The files downloaded for the PDDI are
+```
+iOS_DDI.dmg
+iOS_DDI-version.plist
+```
+The files downloaded for the DDI are
+```
+DeveloperDiskImage.dmg
+DeveloperDiskImage.dmg.signature
+```
+
+The main problem mission in PDDI is the code signature which is a main part in enabling JIT.
 
 ## iOS 17 JIT Compilation
 Currently, the only way to enable JIT on iOS 17 is through Apple and Xcode. The steps to do that are below:
@@ -42,6 +76,7 @@ If that makes sense.
 ## Current status for enabling JIT without using Xcode and using Personal Developer Disk Image with iOS 17
 ### The current status of this has used multiple sources for information on how to import and mount the PDDI. (Personalized Developer Disk Image)
 
+This was made on my guessing so there may be steps not present
 - [x] Getting the PDDI from Xcode
 - [x] Mounting the PDDI's DMG file to MacOS
 - [ ] Getting the code signature for JIT
@@ -55,8 +90,10 @@ With the release of iPadOS and iPhoneOS 17, the way to enable JIT on the devices
 ```
 Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport/
 ```
- >The location is the same for the beta version of Xcode if you're running MacOS 14 Sonoma
+ >The location is the same for the beta version of Xcode if you're running MacOS 14
 
 The full instructions for iOS versions below iOS 17 excluding some versions such as 16.6 are at https://github.com/haikieu/xcode-developer-disk-image-all-platforms
 
 <img width="760" alt="Screenshot 2023-08-03 at 8 39 42 PM" src="https://github.com/loyahdev/jit-personalized-dev-image/assets/68242406/4caf26aa-6bcc-4708-87be-47c155427f8c">
+
+## Sources
