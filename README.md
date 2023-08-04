@@ -36,7 +36,7 @@ Flycast can't run without JIT and you will find the app crashing when trying to 
 The reason that JIT isn't seemingly making anything run faster on iOS is that Xcode doesn't just enable JIT it debugs the said software.
 This means Xcode is looking at exactly what's happening in the app and shows you the data inevitably running the app slower.
 
-The main difference I use to differ between Xcode JIT and other apps JIT is Xcode does JIT Compilation which debugs the app and JIT which enables the app with JIT and doesn't debug it
+The main difference I use to differ between Xcode JIT and other apps JIT is Xcode does JIT Compilation which debugs the app and JIT which enables the app with JIT and doesn't debug it.
 
 ## Current status for enabling JIT without using Xcode and using Personal Developer Disk Image with iOS 17
 ### The current status of this has used multiple sources for information on how to import and mount the PDDI. (Personalized Developer Disk Image)
