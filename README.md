@@ -35,8 +35,6 @@ DeveloperDiskImage.dmg
 DeveloperDiskImage.dmg.signature
 ```
 
-The main problem mission in PDDI is the code signature which is a main part in enabling JIT.
-
 ## iOS 17 JIT Compilation
 Currently, the only way to enable JIT on iOS 17 is through Apple and Xcode. The steps to do that are below:
 1. Make sure all iPhoneOS 17 and iPadOS 17 simulators are installed
