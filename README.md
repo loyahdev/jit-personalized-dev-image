@@ -77,11 +77,13 @@ If that makes sense.
 This was made on my guessing so there may be steps not present
 - [x] Getting the PDDI from Xcode
 - [x] Mounting the PDDI's DMG file to MacOS
-- [ ] Getting the code signature for JIT
+- [x] Getting the code signature for JIT (Different workaround)
 - [ ] Mounting the PDDI's DMG file to JIT enabling software (Jitterbug, Jitstreamer, Sidetore, AltJIT, etc...)
 - [ ] Enabling JIT through said software
 
 The status may change at any time
+
+Apple's API for iOS 17 has changed a lot makkng enabling JIT not at easy.
 
 ## iOS 16 and below JIT Compilation
 With the release of iPadOS and iPhoneOS 17, the way to enable JIT on the devices has changed. The original way to enable it from iOS 11 - iOS 16 was to use a developer disk image and signature found in the Xcode files at the location 
